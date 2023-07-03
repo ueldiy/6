@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Перевірка</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Скільки тижнів у році?</h1>
+    <div class="container">
+      <div>
+        <input type="radio" name="variant" value="jump">
+        <label>52</label><br>
+        <input type="radio" name="variant" value="run">
+        <label>2</label><br>
+        <input type="radio" name="variant" value="swim">
+        <label>1</label><br>
+      </div>
+
+      <button onclick="checkOption()">Перевірити</button>
+      <p id="result"></p>
+    </div>
+    <div class="link">
+      <a href="../index.html">вибір завдань</a>
+    </div>
+
+    <script>
+      function checkOption() {
+        var selectedOption = document.querySelector('input[name="variant"]:checked');
+        var resultText = document.getElementById("result");
+        var correctOption = "jump";
+
+        if (selectedOption) {
+          if (selectedOption.value === correctOption) {
+            resultText.textContent = "Ви обрали вірний варіант!";
+          } else {
+            resultText.textContent = "Ви обрали неправильний варіант.";
+          }
+        } else {
+          resultText.textContent = "Будь ласка, оберіть один з варіантів.";
+        }
+      }
+    </script>
+  </body>
+</html>
